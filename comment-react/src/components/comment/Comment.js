@@ -8,8 +8,8 @@ const Comment = (props) => {
     <div className='Comment'>
       <h2>Nome:{props.nome}</h2>
       <p>email: {props.email}</p>
-      <p>{props.children}</p>
       <p>data: {props.data.toString()}</p>
+      <p> mensagem: {props.children}</p>
     </div>
   )
 }
