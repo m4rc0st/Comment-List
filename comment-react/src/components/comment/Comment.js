@@ -1,6 +1,5 @@
 import React from 'react';
 import "./Comment.css"
-// import { Container } from './styles';
 
 const Comment = (props) => {
 
@@ -10,6 +9,7 @@ const Comment = (props) => {
       <p>email: {props.email}</p>
       <p>data: {props.data.toString()}</p>
       <p> mensagem: {props.children}</p>
+      <button onClick={props.onRemove}>&times;</button>
     </div>
   )
 }

@@ -11,13 +11,6 @@ class App extends Component {
         email: 'joaoalgo@email.com',
         data: new Date(2023,2,19),
         mensagem: 'Lá eleeeee'
-      },
-      {
-        nome: 'Maira',
-        email: 'maira@email.com',
-        data: new Date(2023,2,22),
-        mensagem: 'Vixx'
-      
       }
     ],
     novoComentario:{
@@ -37,6 +30,12 @@ class App extends Component {
     })
   }
 
+  removerComentario =(comentario) =>{
+    let lista = this.state.comentarios;
+    lista = lista.filter(c => c !== comentario)
+    this.setState({comentarios: lista})
+  }
+
   preenchimento = (evento) =>{
     const {name, value} = evento.target;
     this.setState({
@@ -54,7 +53,8 @@ class App extends Component {
           key={indice}
           nome={comentario.nome}
           email={comentario.email}
-          data={comentario.data}>
+          data={comentario.data}
+          onRemove={this.removerComentario.bind(this, comentario)}>
           {comentario.mensagem}
           </Comment>
         ))}
