@@ -1,5 +1,53 @@
-.App {
-  //text-align: center;
-  paddin: 0 30px;
+* {
+  box-sizing: border-box;
 }
 
+body {
+  background-color: #f7fafc;
+}
+
+h1 {
+  text-align: center;
+}
+
+.App {
+  //text-align: center;
+  padding: 0 30px;
+}
+
+.NovoComentario{
+  padding: 1rem
+}
+
+.NovoComentario h2{
+}
+
+.NovoComentario input, .NovoComentario textarea{
+  color: #4a4468;
+  background-color: #fff;
+  padding: .5rem 1rem;
+  margin: .2rem 0;
+  border-radius: .4rem;
+}
+
+.NovoComentario input{
+  width: 50%;
+}
+
+.NovoComentario textarea{
+  width: 50%;
+}
+
+.NovoComentario button{
+  background-color: #4299e1;
+  color: #fff;
+  font-size: 1rem;
+  margin: .2rem 0;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  border: none;
+}
+
+.NovoComentario button:hover{
+  background-color: #2b2b2b;
+}

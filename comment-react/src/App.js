@@ -9,7 +9,7 @@ class App extends Component {
       {
         nome: 'João',
         email: 'joaoalgo@email.com',
-        data: new Date(2023,2,19),
+        data: new Date(2023,0,25, 12, 15, 0),
         mensagem: 'Lá eleeeee'
       }
     ],
@@ -46,7 +46,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Meu projeto</h1>
+        <h1>Assunto do Momento</h1>
 
         {this.state.comentarios.map((comentario, indice) => (
           <Comment 
@@ -59,21 +59,23 @@ class App extends Component {
           </Comment>
         ))}
 
-        <form method="post" onSubmit={this.addComentario}>
+        <form method="post" onSubmit={this.addComentario} className="NovoComentario">
           <h2>Adicionar um comentario</h2>
           <div>
             <input 
             type="text" 
             name="nome"
             value={this.state.novoComentario.nome}
+            required
             onChange={this.preenchimento}
-            placeholder='Digite seu nome'></input>
+            placeholder='Nome de Usuário'></input>
           </div>
           <div>
             <input 
             type="email" 
             name="email"
             value={this.state.novoComentario.email}
+            required
             onChange={this.preenchimento}
             placeholder='Digite seu email'></input>
           </div>
@@ -81,8 +83,10 @@ class App extends Component {
             <textarea 
             name="mensagem" 
             value={this.state.novoComentario.mensagem}
+            required
             onChange={this.preenchimento}
-            rows="4" />
+            rows="3" 
+            />
           </div>
           <button type='submit'>Adicionar um comentário!</button>
         </form>

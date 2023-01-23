@@ -1,15 +1,24 @@
 import React from 'react';
-import "./Comment.css"
+import {formatRelative} from "date-fns";
+import {ptBR} from "date-fns/locale";
+
+import "./Comment.css";
+import imagemUsuario from "/home/marcos/Comment-List/comment-react/public/Profile.png"
 
 const Comment = (props) => {
 
   return(
     <div className='Comment'>
-      <h2>Nome:{props.nome}</h2>
-      <p>email: {props.email}</p>
-      <p>data: {props.data.toString()}</p>
-      <p> mensagem: {props.children}</p>
-      <button onClick={props.onRemove}>&times;</button>
+      <img class="avatar" src={imagemUsuario} alt={props.nome}/>
+      <div class='conteudo'>
+        <h2 class="nome"> @{props.nome}</h2>
+        
+        <p class="email"> {props.email}</p>
+        
+        <p class="mensagem"> {props.children}</p>
+        <button onClick={props.onRemove}>&times;</button>
+        <p class="data"> {formatRelative(props.data, new Date(),{locale: ptBR} )}</p>
+      </div>
     </div>
   )
 }
